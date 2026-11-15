@@ -5,7 +5,7 @@ public struct TOMLLimits: Sendable, Equatable {
     /// Maximum input size in bytes.
     public var maxInputBytes: Int
     /// Maximum nesting of tables and arrays. The root table counts as depth 1, so
-    /// `a = [1]` has depth 2 and `[a.b]` has depth 3.
+    /// `a = [1]` has depth 2 and `[a.b]` has depth 3. Scalars do not add depth.
     public var maxDepth: Int
     /// Maximum number of values in the result: tables, arrays and scalars, not counting
     /// the root table.

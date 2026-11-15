@@ -58,7 +58,7 @@ struct Tree {
 
     /// Appends a node, enforcing the depth and node limits at the node's source offset.
     mutating func add(_ node: Node, at offset: Int, in bytes: [UInt8]) throws(TOMLError) -> Int {
-        guard node.depth <= limits.maxDepth else {
+        guard node.kind == .scalar || node.depth <= limits.maxDepth else {
             throw TOMLError(.depthLimitExceeded, "nesting is deeper than \(limits.maxDepth)", offset: offset, in: bytes)
         }
         guard nodes.count <= limits.maxNodes else {
