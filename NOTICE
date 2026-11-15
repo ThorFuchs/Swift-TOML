@@ -1,0 +1,10 @@
+Swift-TOML
+Copyright 2026 Thorsten Fuchs
+
+Swift-TOML is licensed under the Apache License, Version 2.0.
+See LICENSE in the root of this repository.
+
+Tests/TOMLTests/Fixtures/toml-test contains the TOML 1.0 test cases copied from
+toml-test (https://github.com/toml-lang/toml-test), tag v2.2.0, which is
+distributed under the MIT License. See
+Tests/TOMLTests/Fixtures/toml-test/LICENSE.
