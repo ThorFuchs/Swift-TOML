@@ -86,7 +86,7 @@ struct Parser {
     /// A syntax error for the byte at `i`; a stray control character gets its own code.
     func unexpected(_ expectation: String) -> TOMLError {
         let found = peek()
-        if let found, found < 0x20 && found != tab && found != lf && found != cr || found == 0x7F {
+        if let found, (found < 0x20 && found != tab && found != lf && found != cr) || found == 0x7F {
             return error(.controlCharacter, "\(expectation), found \(Self.describe(found))")
         }
         return error(.syntax, "\(expectation), found \(Self.describe(found))")
